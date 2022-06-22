@@ -39,26 +39,55 @@
               <div class="columns">
                 <div class="form-col">
                   <label for="first">FIRST NAME</label>
-                  <input type="text" name="first" id="first" />
+                  <input type="text" name="first" id="first" required />
+                  <span></span>
                   <label for="email">EMAIL</label
-                  ><input type="email" name="email" id="email" />
+                  ><input
+                    required
+                    type="email"
+                    name="email"
+                    id="email"
+                    placeholder=" "
+                  />
+                  <span></span>
                   <label for="password">PASSWORD</label
-                  ><input type="password" name="password" id="password" />
+                  ><input
+                    type="password"
+                    name="password"
+                    id="password"
+                    placeholder=" "
+                    pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
+                    required
+                  />
+                  <span></span>
+                  <div class="requirements">
+                    Your password must be at least 8 characters as well as
+                    contain at least one uppercase, one lowercase, one special
+                    character and one number.
+                  </div>
                 </div>
                 <div class="form-col">
                   <label for="last">LAST NAME</label
                   ><input type="text" name="last" id="last" />
+                  <span></span>
                   <label for="phone">PHONE NUMBER</label
-                  ><input type="tel" name="phone" id="phone" />
+                  ><input type="tel" name="phone" id="phone" required />
+                  <span></span>
                   <label for="match">CONFIRM PASSWORD</label
-                  ><input type="password" name="password" id="password" />
+                  ><input
+                    type="password"
+                    name="password"
+                    id="match"
+                    placeholder=" "
+                    required
+                  />
+                  <span></span>
                 </div>
               </div>
             </form>
           </div>
           <div class="footer">
             <button type="submit">Create Account</button>
-
             <div class="author">Copyright ©2022 Veanty</div>
           </div>
         </div>
