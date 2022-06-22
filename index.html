@@ -39,7 +39,14 @@
               <div class="columns">
                 <div class="form-col">
                   <label for="first">FIRST NAME</label>
-                  <input type="text" name="first" id="first" required />
+                  <input
+                    type="text"
+                    name="first"
+                    id="first"
+                    required
+                    placeholder=" "
+                    pattern="\b([A-ZÀ-ÿ][-,a-z. ']+[ ]*)+"
+                  />
                   <span></span>
                   <label for="email">EMAIL</label
                   ><input
@@ -58,6 +65,7 @@
                     placeholder=" "
                     pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
                     required
+                    onChange="onChange()"
                   />
                   <span></span>
                   <div class="requirements">
@@ -68,13 +76,27 @@
                 </div>
                 <div class="form-col">
                   <label for="last">LAST NAME</label
-                  ><input type="text" name="last" id="last" />
+                  ><input
+                    type="text"
+                    name="last"
+                    id="last"
+                    placeholder=" "
+                    pattern="\b([A-ZÀ-ÿ][-,a-z. ']+[ ]*)+"
+                  />
                   <span></span>
                   <label for="phone">PHONE NUMBER</label
-                  ><input type="tel" name="phone" id="phone" required />
+                  ><input
+                    type="tel"
+                    name="phone"
+                    id="phone"
+                    required
+                    placeholder=" "
+                    pattern="^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$"
+                  />
                   <span></span>
                   <label for="match">CONFIRM PASSWORD</label
                   ><input
+                    onChange="onChange()"
                     type="password"
                     name="password"
                     id="match"

@@ -136,44 +136,36 @@ input[type="email"]:hover,
 input[type="tel"]:hover {
   border-image-outset: right center;
 }
-input[type="text"]:focus + label,
-input[type="email"]:focus + label,
-input[type="password"]:focus + label {
-  opacity: 0;
-}
-input[type="text"]:not(:placeholder-shown) + label,
-input[type="password"]:not(:placeholder-shown) + label,
-input[type="email"]:not(:placeholder-shown) + label {
-  opacity: 0;
-}
+input[type="tel"]:invalid:not(:placeholder-shown):not(:focus),
 input[type="text"]:invalid:not(:placeholder-shown):not(:focus),
 input[type="email"]:invalid:not(:placeholder-shown):not(:focus),
 input[type="password"]:invalid:not(:placeholder-shown):not(:focus) {
   background: #ff0062;
 }
+input[type="tel"]:invalid:not(:placeholder-shown):not(:focus),
 input[type="text"]:valid:not(:placeholder-shown):not(:focus),
 input[type="email"]:valid:not(:placeholder-shown):not(:focus),
 input[type="password"]:valid:not(:placeholder-shown):not(:focus) {
   background: rgb(57, 185, 31);
 }
-input:invalid:not(:placeholder-shown):not(:focus) + label {
-  opacity: 0;
-}
+input[type="tel"]:invalid:focus:not(:placeholder-shown) ~ .requirements,
 input[type="text"]:invalid:focus:not(:placeholder-shown) ~ .requirements,
 input[type="email"]:invalid:focus:not(:placeholder-shown) ~ .requirements,
 input[type="password"]:invalid:focus:not(:placeholder-shown) ~ .requirements {
   max-height: 200px;
   padding: 1em;
 }
+input[type="tel"]:valid:not(:placeholder-shown) + span::before,
 input[type="text"]:valid:not(:placeholder-shown) + span::before,
 input[type="email"]:valid:not(:placeholder-shown) + span::before,
-input[type="password"]:valid:not(:placeholder-shown) + span::after {
+input[type="password"]:valid:not(:placeholder-shown) + span::before {
   content: "✓";
   color: rgb(57, 185, 31);
 }
+input[type="tel"]:invalid:not(:placeholder-shown) + span::before,
 input[type="text"]:invalid:not(:placeholder-shown) + span::before,
 input[type="email"]:invalid:not(:placeholder-shown) + span::before,
-input[type="password"]:invalid:not(:placeholder-shown) + span::after {
+input[type="password"]:invalid:not(:placeholder-shown) + span::before {
   content: "✘";
   color: #ff0062;
 }
