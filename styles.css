@@ -22,8 +22,6 @@ body {
   animation: gradient 15s ease infinite;
   flex: 1;
   display: flex;
-  justify-content: center;
-  align-items: center;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 @keyframes gradient {
@@ -38,15 +36,10 @@ body {
   }
 }
 .sidebar {
-  /* font-family: "Norse-Bold", sans-serif; */
-  position: relative;
-  width: 100%;
   height: 7rem;
-  text-align: center;
-  font-size: 4rem;
-  position: relative;
-  bottom: 20%;
-  background-color: rgb(8, 0, 0, 0.5);
+  width: 100%;
+  font-size: 3.5rem;
+  background-color: rgb(8, 0, 0, 0.2);
   display: flex;
   justify-content: center;
   gap: 1rem;
@@ -57,7 +50,6 @@ body {
   margin: 0;
   padding: 0;
   background-color: rgb(245, 243, 243);
-  width: 100vh;
   height: 100vh;
   flex: 2.7;
 }
@@ -67,7 +59,7 @@ body {
   -o-transition: -o-transform 0.2s ease-out;
   -ms-transition: -ms-transform 0.2s ease-out;
   transition: transform 0.2s ease-out;
-  width: 7rem;
+  width: 6rem;
   height: auto;
   border-radius: 50%;
   border: 3px solid #f9fafb;
@@ -118,8 +110,25 @@ input[type="text"],
 input[type="password"],
 input[type="email"],
 input[type="tel"] {
-  border-radius: 5px;
+  display: block;
   font-size: 1rem;
+  border: 3px solid;
+  border-image-slice: 1;
+  border-width: 2px;
+  border-image-source: linear-gradient(
+    to right,
+    #ee7752 0%,
+    #e73c7e 25%,
+    #23a6d5 50%,
+    #23d5ab 100%
+  );
+  transition: 0.5s;
+}
+input[type="text"]:hover,
+input[type="password"]:hover,
+input[type="email"]:hover,
+input[type="tel"]:hover {
+  border-image-outset: right center;
 }
 label {
   margin-bottom: -0.5rem;
@@ -159,4 +168,9 @@ label {
 .footer > button[type="submit"]:hover {
   background-position: right center;
   cursor: pointer;
+}
+.author {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
 }
