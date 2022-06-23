@@ -124,6 +124,7 @@ input[type="text"],
 input[type="password"],
 input[type="email"],
 input[type="tel"] {
+  padding-left: 2rem;
   font-size: 1rem;
   border: 3px solid;
   border-image-slice: 1;
@@ -135,7 +136,29 @@ input[type="tel"] {
     #23a6d5 50%,
     #23d5ab 100%
   );
-  transition: 0.5s;
+}
+
+input[type="text"]:not(:placeholder-shown):valid,
+input[type="email"]:not(:placeholder-shown):valid,
+input[type="password"]:not(:placeholder-shown):valid,
+input[type="tel"]:not(:placeholder-shown):valid {
+  background: url(check.png);
+  background-size: 1rem;
+  background-repeat: no-repeat;
+  background-position: 3px;
+}
+input[type="text"]:not(:placeholder-shown):invalid,
+input[type="email"]:not(:placeholder-shown):invalid,
+input[type="password"]:not(:placeholder-shown):invalid,
+input[type="tel"]:not(:placeholder-shown):invalid {
+  background: url(invalid.png);
+  background-size: 1rem;
+  background-repeat: no-repeat;
+  background-position: 3px;
+}
+input[type="email"]:not(:placeholder-shown):invalid ~ .requirements,
+input[type="password"]:not(:placeholder-shown):invalid ~ .requirements {
+  display: block;
 }
 label {
   margin-bottom: -0.5rem;
@@ -146,22 +169,25 @@ label {
 .form-row {
   display: flex;
   flex-flow: row wrap;
-  gap: 0.5rem;
+  gap: 1rem;
+  margin-bottom: 1rem;
 }
 .requirements {
-  display: none;
-  color: #e73c7e;
   font-size: 0.7rem;
-  word-wrap: break-word;
-  margin-bottom: 1rem;
+  display: none;
+  padding: 0;
+  color: #999;
+  transition: 0.28s;
+  overflow: hidden;
+  color: #e73c7e;
+  font-style: italic;
 }
 .field {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 0.5rem;
+  gap: 1rem;
 }
-
 .footer {
   padding: 3rem;
   display: flex;
