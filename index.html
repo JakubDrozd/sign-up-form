@@ -34,7 +34,7 @@
           </div>
 
           <div class="form-container">
-            <form action="#" method="post">
+            <form action="#" method="post" id="form">
               <h4 style="font-size: 1.3rem">Lets do this!</h4>
               <div class="columns">
                 <div class="form-col">
@@ -84,15 +84,8 @@
                     pattern="\b([A-ZÀ-ÿ][-,a-z. ']+[ ]*)+"
                   />
                   <span></span>
-                  <label for="phone">PHONE NUMBER</label
-                  ><input
-                    type="tel"
-                    name="phone"
-                    id="phone"
-                    required
-                    placeholder=" "
-                    pattern="^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$"
-                  />
+                  <label for="phone">PHONE NUMBER <em>(optional)</em></label
+                  ><input type="tel" name="phone" id="phone" placeholder=" " />
                   <span></span>
                   <label for="match">CONFIRM PASSWORD</label
                   ><input
@@ -109,7 +102,7 @@
             </form>
           </div>
           <div class="footer">
-            <button type="submit">Create Account</button>
+            <button type="submit" form="form">Create Account</button>
             <div class="author">Copyright ©2022 Veanty</div>
           </div>
         </div>
