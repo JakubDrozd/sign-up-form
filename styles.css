@@ -4,10 +4,18 @@
     display: flex;
     flex-direction: column;
   }
-  .columns {
+  .rows {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .field {
+    width: 95%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    gap: 0.5rem;
   }
   h4 {
     text-align: center;
@@ -19,8 +27,8 @@
     align-items: center;
   }
 }
+
 body {
-  padding: 1rem 0.5rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
@@ -31,7 +39,6 @@ body {
 .container {
   display: flex;
 }
-
 .banner {
   color: #f8f8f8;
   margin: 0;
@@ -144,24 +151,6 @@ input[type="tel"] {
   );
   transition: 0.5s;
 }
-input[type="text"]:hover,
-input[type="password"]:hover,
-input[type="email"]:hover,
-input[type="tel"]:hover {
-  border-image-outset: right center;
-}
-input[type="text"]:hover,
-input[type="password"]:hover,
-input[type="email"]:hover,
-input[type="tel"]:hover {
-  border-image-outset: right center;
-}
-input[type="tel"]:placeholder-shown + span::before,
-input[type="text"]:placeholder-shown + span::before,
-input[type="email"]:placeholder-shown + span::before,
-input[type="password"]:placeholder-shown + span::before {
-  content: "\00a0";
-}
 input[type="tel"]:invalid:not(:placeholder-shown):not(:focus),
 input[type="text"]:invalid:not(:placeholder-shown):not(:focus),
 input[type="email"]:invalid:not(:placeholder-shown):not(:focus),
@@ -173,13 +162,6 @@ input[type="text"]:valid:not(:placeholder-shown):not(:focus),
 input[type="email"]:valid:not(:placeholder-shown):not(:focus),
 input[type="password"]:valid:not(:placeholder-shown):not(:focus) {
   background: rgb(57, 185, 31);
-}
-input[type="tel"]:invalid:focus:not(:placeholder-shown) ~ .requirements,
-input[type="text"]:invalid:focus:not(:placeholder-shown) ~ .requirements,
-input[type="email"]:invalid:focus:not(:placeholder-shown) ~ .requirements,
-input[type="password"]:invalid:focus:not(:placeholder-shown) ~ .requirements {
-  max-height: 200px;
-  padding: 1em;
 }
 input[type="tel"]:valid:not(:placeholder-shown) + span::before,
 input[type="text"]:valid:not(:placeholder-shown) + span::before,
@@ -203,8 +185,15 @@ label {
 }
 .footer {
   padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
-.footer > button[type="submit"] {
+.login {
+  align-self: flex-end;
+  justify-self: flex-end;
+}
+button[type="submit"] {
   display: block;
   text-align: center;
   text-decoration: none;
@@ -214,9 +203,9 @@ label {
   color: white;
   border: 0;
   border-radius: 3px;
+  margin: 1rem;
 }
-.footer > button[type="submit"] {
-  margin: 10px;
+button[type="submit"] {
   padding: 1em 3em;
   background-size: 200% auto;
   color: white;
@@ -230,18 +219,25 @@ label {
   );
   transition: 0.5s;
 }
-.footer > button[type="submit"]:hover {
+button[type="submit"]:hover {
   background-position: right center;
   cursor: pointer;
 }
+
+.form-row {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 0.5rem;
+}
 .requirements {
-  display: none;
-  padding: 0 30px 0 50px;
-  color: #999;
-  transition: 0.28s;
-  overflow: hidden;
-  color: rgb(238, 113, 113);
-  font-style: italic;
-  text-align: center;
-  font-size: 0.9em;
+  color: #e73c7e;
+  font-size: 0.7rem;
+  word-wrap: break-word;
+  margin-bottom: 1rem;
+}
+.field {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
 }

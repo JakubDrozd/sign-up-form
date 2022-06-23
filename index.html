@@ -32,77 +32,106 @@
               <b>You <em>know</em> you want to.</b>
             </div>
           </div>
-
           <div class="form-container">
             <form action="#" method="post" id="form">
               <h4 style="font-size: 1.3rem">Lets do this!</h4>
-              <div class="columns">
-                <div class="form-col">
-                  <label for="first">FIRST NAME</label>
-                  <input
-                    type="text"
-                    name="first"
-                    id="first"
-                    required
-                    placeholder=" "
-                    pattern="\b([A-ZÀ-ÿ][-,a-z. ']+[ ]*)+"
-                  />
-                  <span></span>
-                  <label for="email">EMAIL</label
-                  ><input
-                    required
-                    type="email"
-                    name="email"
-                    id="email"
-                    placeholder=" "
-                  />
-                  <span></span>
-                  <label for="password">PASSWORD</label
-                  ><input
-                    type="password"
-                    name="password"
-                    id="password"
-                    placeholder=" "
-                    pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
-                    required
-                    onChange="onChange()"
-                  />
-                  <span></span>
-                  <div class="requirements">
-                    Your password must be at least 8 characters as well as
-                    contain at least one uppercase, one lowercase, one special
-                    character and one number.
+              <div class="rows">
+                <div class="form-row">
+                  <div class="field">
+                    <label for="first">FIRST NAME</label>
+                    <input
+                      type="text"
+                      name="first"
+                      id="first"
+                      required
+                      placeholder=" "
+                      pattern="\b([A-ZÀ-ÿ][-,a-z. ']+[ ]*)+"
+                    />
+                    <span></span>
+                  </div>
+                  <div class="field">
+                    <label for="last">LAST NAME</label
+                    ><input
+                      type="text"
+                      name="last"
+                      id="last"
+                      placeholder=" "
+                      pattern="\b([A-ZÀ-ÿ][-,a-z. ']+[ ]*)+"
+                    />
+                    <span></span>
                   </div>
                 </div>
-                <div class="form-col">
-                  <label for="last">LAST NAME</label
-                  ><input
-                    type="text"
-                    name="last"
-                    id="last"
-                    placeholder=" "
-                    pattern="\b([A-ZÀ-ÿ][-,a-z. ']+[ ]*)+"
-                  />
-                  <span></span>
-                  <label for="phone">PHONE NUMBER <em>(optional)</em></label
-                  ><input type="tel" name="phone" id="phone" placeholder=" " />
-                  <span></span>
-                  <label for="match">CONFIRM PASSWORD</label
-                  ><input
-                    onChange="onChange()"
-                    type="password"
-                    name="password"
-                    id="match"
-                    placeholder=" "
-                    required
-                  />
-                  <span></span>
+                <div class="form-row">
+                  <div class="field">
+                    <label for="email">EMAIL</label
+                    ><input
+                      required
+                      type="email"
+                      name="email"
+                      id="email"
+                      placeholder=" "
+                    />
+                    <span></span>
+                  </div>
+                  <div class="field">
+                    <label for="phone">PHONE NUMBER <em>(optional)</em></label
+                    ><input
+                      type="tel"
+                      name="phone"
+                      id="phone"
+                      placeholder=" "
+                    />
+                    <span></span>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="field">
+                    <label for="password">PASSWORD</label
+                    ><input
+                      type="password"
+                      name="password"
+                      id="password"
+                      placeholder=" "
+                      pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
+                      required
+                      onChange="onChange()"
+                    />
+                    <span></span>
+                    <div class="requirements">
+                      Minimum eight characters,<br />
+                      at least one uppercase letter,
+                      <br />
+                      one lowercase letter,
+                      <br />
+                      one number and one special
+                      <br />
+                      character
+                    </div>
+                  </div>
+                  <div class="field">
+                    <label for="match">CONFIRM PASSWORD</label
+                    ><input
+                      onChange="onChange()"
+                      type="password"
+                      name="password"
+                      id="match"
+                      placeholder=" "
+                      required
+                    />
+                    <span></span>
+                    <div class="requirements">Passwords must match</div>
+                  </div>
                 </div>
               </div>
             </form>
           </div>
           <div class="footer">
-            <button type="submit" form="form">Create Account</button>
+            <div>
+              <button type="submit" form="form">Create Account</button>
+              <div class="login">
+                Arleady have an account? <a href="">Log in</a>
+              </div>
+            </div>
             <div class="author">Copyright ©2022 Veanty</div>
           </div>
         </div>
